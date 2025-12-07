@@ -1,17 +1,14 @@
+"use client";
+
 import React from 'react'
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    // <nav className="fixed top-10 left-10 text-white justify-between">
-    //     <div className="text-lg font-gray">
-    //         <a href="#quiz" className="hover:text-white-100">quiz</a>
-    //         <a href="#predict" className="hover:text-white-100">predict</a>
-    //     </div>
-    // </nav>
     <nav className="fixed text-white top-5 right-10 px-6 py-5 flex justify-between items-center">
       <div className="space-x-10">
-        <a href="#quiz" className="hover:text-gray-400">Quiz</a>
-        <a href="#guess" className="hover:text-gray-400">Guess with AI</a>
+        <Link href="/quiz" className="hover:text-gray-400">Quiz</Link>
+        <Link href="/guess" className="hover:text-gray-400">Guess with AI</Link>
       </div>
     </nav>
   )

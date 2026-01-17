@@ -1,36 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Integrated Web To Predict Dementia Case
 
-## Getting Started
+This is a computer vision final project that was made using the combination of next.js, Grad-CAM, LLM, and Swin Transformer model technology. The web itself has two features, which are a quiz page where anyone who accesses the website can guess the brain MRI on the image has which class [Mild Demented, Moderate Demented, Non Demented, Very Mild Demented] and after choosing one of the option, it will tell you which answer was right, a Grad-CAM, and an explanation by Gemini AI (2.5 Flash) on why those are the answer and which part of the brain are affected. The second feature of the web is the Guess with AI feature where the user can upload an image and gets a predicted class by Swin Transformer on which dementia class is the brain, then the user will also get a Grad-CAM image and the choice button of whether to get an explanation by Gemini (2.5 Flash) or Mistral (Pixtral-12B-2409) AI. The explanation will be about the affected part of the brain and how it affects the human's functionality. 
 
-First, run the development server:
+The Swin Transformer Model trained using this dataset: https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset. The model was trained for 3 epoch. It has 97% accuracy and 0.0662 loss for the test set. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To run the backend, you have to download the model from this link first and put it into the backend of the project file. It can't be uploaded directly into github because of the file size limitation. Here is the link for the model: https://drive.google.com/drive/folders/1rgDFrSw5qQMcv0blSPCsLcEevZYdidwD?usp=sharing

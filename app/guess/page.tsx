@@ -48,7 +48,8 @@ export default function Home() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/guess",
+        // "http://localhost:8000/guess",
+        "https://tinemeowx-dementiacase.hf.space/guess",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -72,7 +73,8 @@ export default function Home() {
     setExplanations({});
 
     try {
-      const res = await axios.post("http://localhost:8000/explain", {
+      // http://localhost:8000/explain
+      const res = await axios.post("https://tinemeowx-dementiacase.hf.space/explain", {
         model: aiChoice,
         predicted_class: result,
         img_np: imgNp,

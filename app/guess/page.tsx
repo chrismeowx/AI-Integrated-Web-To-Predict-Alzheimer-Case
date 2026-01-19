@@ -104,13 +104,7 @@ export default function Home() {
       {!gradcam && (
         <div>
           {typeof preview === "string" && (
-            <Image
-              src={preview}
-              alt="Uploaded"
-              width={350}
-              height={350}
-              className="border border-gray-600"
-            />
+            <Image src={preview} alt="Uploaded" width={350} height={350} className="border border-gray-600" />
           )}
 
           {predicting && (
@@ -122,12 +116,7 @@ export default function Home() {
           {!predicting && (
             <label className="mt-10 inline-block p-5 w-[200px] text-center rounded-lg cursor-pointer text-black bg-white hover:bg-gray-300">
               Upload Image
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleFileChange}
-              />
+              <input type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
             </label>
           )}
         </div>
@@ -137,13 +126,7 @@ export default function Home() {
         <div className="mt-10 p-10 w-full border border-gray-700 bg-gray-900">
           <div className="mb-10">
             <h2 className="font-semibold text-3xl mb-5">Grad-CAM Heatmap</h2>
-            <Image
-              src={`data:image/png;base64,${gradcam}`}
-              alt="GradCAM"
-              width={350}
-              height={350}
-              className="rounded-lg border border-white"
-            />
+            <Image src={`data:image/png;base64,${gradcam}`} alt="GradCAM" width={350} height={350} className="rounded-lg border border-white" />
           </div>
 
           <h3 className="font-semibold text-3xl mb-8">
@@ -152,25 +135,13 @@ export default function Home() {
 
           <div className="flex gap-4 mb-8">
             {["gemini", "mistral", "both"].map((m) => (
-              <button
-                key={m}
-                onClick={() => setAiChoice(m as any)}
-                className={`px-6 py-3 rounded-lg border ${
-                  aiChoice === m
-                    ? "bg-white text-black"
-                    : "bg-black text-white"
-                }`}
-              >
+              <button key={m} onClick={() => setAiChoice(m as any)} className={`px-6 py-3 rounded-lg border ${aiChoice === m ? "bg-white text-black" : "bg-black text-white"}`}>
                 {m.toUpperCase()}
               </button>
             ))}
           </div>
 
-          <button
-            onClick={requestExplanation}
-            disabled={loading}
-            className="px-8 py-4 bg-white text-black rounded-lg hover:bg-gray-300"
-          >
+          <button onClick={requestExplanation} disabled={loading} className="px-8 py-4 bg-white text-black rounded-lg hover:bg-gray-300">
             {loading ? "Generating explanation..." : "Generate Explanation"}
           </button>
 
